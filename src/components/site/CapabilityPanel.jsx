@@ -31,7 +31,7 @@ export default function CapabilityPanel({ capability, index }) {
         className="absolute inset-x-0 -top-[10%] h-[120%]"
       >
         {/* Hover-scale layer */}
-        <div className="h-full w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.04]">
+        <div className="h-full w-full transition-transform duration-1000 ease-expo group-hover:scale-[1.04]">
           <Image
             src={capability.cover}
             alt={capability.title}

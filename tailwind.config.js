@@ -62,6 +62,9 @@ module.exports = {
   				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
+  		transitionTimingFunction: {
+  			expo: 'cubic-bezier(0.22, 1, 0.36, 1)'
+  		},
   		fontFamily: {
   			heading: ['var(--font-heading)'],
   			body: ['var(--font-body)'],

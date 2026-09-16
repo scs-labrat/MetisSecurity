@@ -1,62 +1,85 @@
-# Base44 Project
+# Asymmetric — Offensive Security Site
 
-Use this repository to run and edit the app locally, then publish changes back through Base44.
+A seven-route public website for Asymmetric, a boutique offensive security
+consultancy. Built with React + Vite + Tailwind, React Router, and Motion.
+Visual system adapted from the BDSN reference: oversized Instrument Sans
+typography, vast whitespace, full-width capability panels, a full-screen
+navigation overlay, a desktop-only custom cursor, and restrained parallax.
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+## Routes
 
-## Prerequisites
+| Route | Page |
+|---|---|
+| `/` | Home — positioning + six capability panels + portrait + enquiry CTA |
+| `/services` | Services — outcomes intro + six panels + three service families + FAQs |
+| `/about` | About — principles, team, engagement process |
+| `/contact` | Contact — enquiry form + contact details |
+| `/services/penetration-testing` | Penetration Testing (sections: `#web-api`, `#cloud-identity`, `#internal-endpoint`) |
+| `/services/adversary-simulation` | Adversary Simulation (section: `#connected-systems`) |
+| `/services/ai-security` | AI Security |
 
-1. Clone the repository using the project's Git URL.
-2. Navigate to the project directory.
-3. Install dependencies: `npm install`.
-4. Install the Base44 CLI: `npm install -g base44@latest`.
-5. Install [Deno](https://docs.deno.com/runtime/getting_started/installation/) — the local Base44 backend runs on it.
+Home and Services share the same six capability records. Every panel links to
+a real service page or section anchor — there are no "coming soon" states.
 
-Run `base44 --help` (or see the [CLI reference](https://docs.base44.com/developers/references/cli/commands/introduction)) for the full command surface.
+## Editing content
 
-## Run Locally
+All copy lives in typed data modules — no CMS required.
 
-Three commands, from the project root:
+- **Site identity, contact, social, footer, time zone:**
+  `src/lib/siteConfig.js`
+- **Six capability panels (title, summary, cover image, destination):**
+  `src/data/capabilities.js`
+- **Three service pages (question, summary, facts, content blocks, related):**
+  `src/data/services.js`
+- **About page (intro, principles, team, process):**
+  `src/data/team.js`
+
+Service pages use one reusable template rendered by
+`src/components/site/ServiceDetailRenderer.jsx`. Block types: `text`, `list`,
+`statement`, `image`, `pair`. Add blocks to a service's `blocks` array to
+extend a page.
+
+## Images
+
+Capability-panel and portrait imagery are AI-generated placeholders following
+the brief's visual direction (macro-tech realism, monochrome, industrial).
+Replace the URLs in `capabilities.js` and `services.js` with owned production
+media. Use the `Image` component from `@/components/ui/image` for all content
+images — it serves responsive, WebP-optimised variants.
+
+## Configuring contact delivery
+
+The enquiry form (`src/components/site/ContactForm.jsx`) is in **demo mode**
+while `siteConfig.contact.deliveryConfigured` is `false`. In demo mode it
+validates input and shows an honest "not yet delivered" preview — it never
+claims a successful submission.
+
+To go live:
+
+1. Set `siteConfig.contact.email` to the real recipient.
+2. Set `siteConfig.contact.deliveryConfigured` to `true`.
+3. Wire `onSubmit` in `ContactForm.jsx` to your chosen handler (a backend
+   function, form service, or email integration). The current submit handler
+   is clearly marked with a simulated delay and a placeholder for the real
+   call.
+
+## Notes and remaining items
+
+- Team biographies, contact details, and social links are **placeholders**.
+  Replace with verified details before launch. Do not publish unsupported
+  credentials, client logos, testimonials, or named case studies.
+- Service copy is **proposed/draft**. Replace durations, deliverables, and
+  engagement terms with Asymmetric's actual model.
+- The custom cursor is desktop-only (fine pointer + hover, no reduced motion).
+  Touch and keyboard keep the native cursor; all actions work without hover.
+- Reduced-motion support disables parallax and cursor movement.
+- Validate final responsive composition at 390, 768, 810, 1363, 1440, 1920px.
+- This app is not yet published — publish it to get a live URL.
+
+## Run
 
 ```bash
-base44 login   # one-time per machine
-base44 link    # one-time per clone
-base44 dev     # local backend + frontend together
-```
-
-Open the frontend URL that `base44 dev` prints (typically `http://localhost:5173`).
-
-Notes:
-
-- **Every fresh clone needs `base44 link`.** It writes `base44/.app.jsonc` (the app-id pointer), which is deliberately gitignored. Your app id is in the Builder URL (`app.base44.com/apps/<id>/...`); `base44 link --help` shows the non-interactive flags.
-- **`base44 dev` runs the frontend for you** (via `site.serveCommand` in this repo's `base44/config.jsonc`) — never run `npm run dev` yourself: alone it serves a UI with no backend behind it (`[base44] Proxy not enabled`, every `/api` call fails), and alongside `base44 dev` the second Vite silently takes the next port and you end up looking at the wrong one.
-- **The app must be published at least once for the UI to load under `base44 dev`.** The frontend boots by fetching app settings from the hosted app; before the first publish that fails and every page redirects to login. The local API works regardless.
-- Entities, functions, and auth run locally — entity data is **in-memory only**, wiped when `base44 dev` restarts. Everything else (Core integrations, OAuth login) is forwarded to your deployed app. Full breakdown: [Local development overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview).
-
-## Frontend Only, Hosted Backend
-
-To work on just the frontend against your app's live hosted backend:
-
-```bash
-base44 dev --remote
-```
-
-⚠️ In this mode writes go to your app's **production data** — plain `base44 dev` keeps everything local.
-
-## Publish Your Changes
-
-After pushing your changes to git, open the Base44 dashboard and publish the app:
-
-```bash
-base44 dashboard open
-```
-
-This repo syncs to Base44 through git, so publish from the dashboard rather than `base44 deploy` — a CLI deploy ships your local tree directly, bypassing the sync, and the deployed state silently diverges from the repo.
-
-## Docs & Support
-
-GitHub integration: [https://docs.base44.com/developers/app-code/local-development/github](https://docs.base44.com/developers/app-code/local-development/github)
-
-Local development: [https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview)
-
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+npm install
+npm run dev      # local dev
+npm run build    # production build
+``

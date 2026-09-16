@@ -121,10 +121,10 @@ export default function NavigationOverlay({ open, onClose }) {
                       className="group relative font-display text-[44px] font-bold uppercase leading-[0.9] tracking-tighter text-foreground sm:text-[64px] md:text-[88px] lg:text-[120px]"
                     >
                       <span className="relative inline-block overflow-hidden">
-                        <span className="block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+                        <span className="block transition-transform duration-300 ease-expo group-hover:-translate-y-full">
                           {link.label}
                         </span>
-                        <span className="absolute inset-0 block translate-y-full text-muted-foreground transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0">
+                        <span className="absolute inset-0 block translate-y-full text-muted-foreground transition-transform duration-300 ease-expo group-hover:translate-y-0">
                           {link.label}
                         </span>
                       </span>

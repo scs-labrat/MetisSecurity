@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { getCapabilityHref } from "@/data/capabilities";
 import { useCursor } from "./CustomCursor";
 
 // Related-service cards at the foot of a service detail page.

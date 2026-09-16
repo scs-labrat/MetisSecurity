@@ -1,5 +1,5 @@
 import React from "react";
-import RollingLink from "./RollingLink";
+import { Link } from "react-router-dom";
 import { primaryCta } from "@/lib/siteConfig";
 
 // Shared closing enquiry section: large centered heading + outlined CTA.
@@ -19,11 +19,35 @@ export default function ContactCTA({
           ))}
         </h2>
         <div className="mt-10 md:mt-14">
-          <span className="inline-flex items-center justify-center rounded-full border border-foreground/30 px-7 py-3.5 text-[14px] font-medium uppercase tracking-[0.08em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background">
-            <RollingLink to={href} arrow>{label}</RollingLink>
-          </span>
+          <Link
+            to={href}
+            className="group inline-flex items-center justify-center rounded-full border border-foreground/30 px-7 py-3.5 text-[14px] font-medium uppercase tracking-[0.08em] text-foreground transition-colors duration-300 hover:border-foreground hover:bg-foreground"
+          >
+            <span className="relative block overflow-hidden">
+              <span className="block transition-transform duration-300 ease-expo group-hover:-translate-y-full">
+                <span className="inline-flex items-center gap-3 group-hover:text-background">
+                  {label}
+                  <Arrow />
+                </span>
+              </span>
+              <span className="absolute inset-0 block translate-y-full text-background transition-transform duration-300 ease-expo group-hover:translate-y-0">
+                <span className="inline-flex items-center gap-3">
+                  {label}
+                  <Arrow />
+                </span>
+              </span>
+            </span>
+          </Link>
         </div>
       </div>
     </section>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M3 13L13 3M13 3H6M13 3V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

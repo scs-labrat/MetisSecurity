@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function RollingLink({ to, children, className = "", arrow = true }) {
   const inner = (
     <span className="relative block overflow-hidden">
-      <span className="block transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-full">
+      <span className="block transition-transform duration-300 ease-expo group-hover:-translate-y-full">
         <span className="inline-flex items-center gap-3">
           {children}
           {arrow && <Arrow />}
@@ -14,7 +14,7 @@ export default function RollingLink({ to, children, className = "", arrow = true
       </span>
       <span
         aria-hidden="true"
-        className="absolute inset-0 block translate-y-full text-muted-foreground transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0"
+        className="absolute inset-0 block translate-y-full text-muted-foreground transition-transform duration-300 ease-expo group-hover:translate-y-0"
       >
         <span className="inline-flex items-center gap-3">
           {children}
