@@ -4,7 +4,7 @@
 
 import { capabilities, getCapabilityHref } from "./capabilities";
 
-const portraitCover = "/__generating__/cff3c0b9-ddea-44e9-9d40-2d71a2e7249a.png";
+const portraitCover = "https://media.base44.com/images/public/6aaafc141cc6e903236d3845/e33fa5d9f_generated_469f52f3.jpg";
 
 export const services = [
   {
