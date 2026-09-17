@@ -38,7 +38,6 @@ export const primaryCta = {
 export const navLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "Methodology", href: "/methodology" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
