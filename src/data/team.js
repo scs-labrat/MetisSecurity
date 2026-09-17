@@ -1,67 +1,91 @@
-// About-page content: consultancy introduction, working principles, team,
-// and engagement process. Team entries are placeholders — replace with
-// verified biographies and qualifications before launch. Do not publish
-// unsupported credentials, client logos, or named case studies.
+// About-page content for Applied Computing: company introduction, working
+// principles, the Metis assessment process, and team. Company details are
+// drawn from the Metis Unified Model document. Team entries are placeholders
+// until verified profiles are supplied.
 
 export const about = {
   intro:
-    "Asymmetric is a boutique offensive security consultancy. We work with enterprise CISOs, security leaders, and startup founders to find the attack paths that matter — and to help you decide what to fix.",
+    "Applied Computing is the Metis practice. We see the enterprise estate as one whole — not a set of technology silos — and we assess whether a realistic starting identity can reach a business consequence. The client buys one map of how access becomes consequence, in one vocabulary, instead of a stack of reports in six.",
+  whatClientBuys:
+    "One map of how access becomes consequence across the whole estate, in one vocabulary. Every finding is a proven path. Cross-domain paths are the primary product. Detection is read from the same map. And the work is comparable over time and across the estate.",
   principles: [
     {
-      title: "Attack paths over checklists",
+      title: "One ontology for offensive security",
       description:
-        "We chase the routes an attacker would actually take, not the findings that pad a report. The output is a short list of what matters.",
+        "The estate is one graph. We replace technology-specific methodologies with one model of compromise, expressed in a fixed vocabulary of seven nouns and nine verbs.",
     },
     {
-      title: "Evidence you can act on",
+      title: "A finding is a proven path",
       description:
-        "Every finding is reproduced and documented. You get the proof you need to fix it and the context to prioritise it.",
+        "A finding is a proven path through the graph, from a realistic starting identity to a business consequence the client is paying to prevent — where every edge is justified by an observed weakness or trust relationship and supported by evidence.",
     },
     {
-      title: "Built around your decisions",
+      title: "Severity is a property of the path",
       description:
-        "An engagement is scoped to the decisions you need to make. We tell you what to fix first, and why.",
+        "Severity is not a property of the flaw. It is a property of the path. Remediation is the cheapest edge to cut.",
     },
     {
-      title: "Calm under pressure",
+      title: "A claim is a hypothesis until proven",
       description:
-        "We coordinate closely, set clear boundaries, and keep a live channel open. Nothing happens by surprise.",
+        "An automated tool or a model proposes an edge; it does not confirm one. Collection is a lead. Proof is a separate act. No tool's or model's confidence score changes that.",
+    },
+    {
+      title: "A human owns every finding",
+      description:
+        "Everything from the target is treated as untrusted data to analyse, never as instruction. Every finding is verified and owned by a human before it ships.",
     },
   ],
   process: [
     {
       step: "01",
-      title: "Scoping",
+      title: "Confirm",
       description:
-        "A short conversation about your systems, the risk you're worried about, and the decisions you need to support.",
+        "Confirm the environment and baseline. Agree the subgraph in scope and the hard boundary around it.",
     },
     {
       step: "02",
-      title: "Testing",
+      title: "Map",
       description:
-        "Manual, attacker-led testing focused on the paths with the highest impact. Evidence captured at every step.",
+        "Map the nouns and candidate edges — sites, zones, assets, principals, and conduits — and the trust relationships between them.",
     },
     {
       step: "03",
-      title: "Findings",
+      title: "Prove",
       description:
-        "A prioritised set of findings with reproduction steps and remediation guidance — ranked by real impact.",
+        "Prove the prioritised edges. A claim is a hypothesis until evidence proves it; collection is a lead, proof is a separate act.",
     },
     {
       step: "04",
-      title: "Debrief",
+      title: "Demonstrate",
       description:
-        "A working session with your team to walk through what we found and what to do next. We stay available while you fix.",
+        "Demonstrate the path — from a realistic starting identity to the business consequence, with every step justified by evidence.",
+    },
+    {
+      step: "05",
+      title: "Assess",
+      description:
+        "Assess visibility and response. Read detection from the same map: where the attacker is seen, and where they are not.",
+    },
+    {
+      step: "06",
+      title: "Report",
+      description:
+        "Report and verify improvement. Remediation is the cheapest edge to cut; the work is comparable over time and across the estate.",
     },
   ],
   // Placeholder team — replace with verified profiles before launch.
   team: [
     {
       name: "Your team here",
-      role: "Principal Consultant",
+      role: "Metis practice",
       bio: "This is a placeholder biography. Replace it with verified experience, qualifications, and relevant research before launch. Omit any credentials, client names, or case studies that haven't been confirmed.",
     },
   ],
+  company: {
+    registeredName: "Applied Computing Technologies Ltd.",
+    companyNumber: "15350699",
+    address: "3rd floor, 86-90 Paul Street, London, EC2A 4NE",
+  },
   // Optional: approved research or evidence of expertise. Leave empty until supplied.
   research: [],
 };

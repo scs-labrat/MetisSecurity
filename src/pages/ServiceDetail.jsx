@@ -12,7 +12,7 @@ export default function ServiceDetail() {
   const service = getServiceBySlug(slug);
 
   useEffect(() => {
-    if (service) document.title = `${service.title} — Asymmetric`;
+    if (service) document.title = `${service.title} — Applied Computing`;
   }, [service]);
 
   // Scroll to section anchor if present (e.g. #web-api).

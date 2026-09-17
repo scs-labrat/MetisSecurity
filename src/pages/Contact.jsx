@@ -4,7 +4,7 @@ import SplitHeadline from "@/components/site/SplitHeadline";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function Contact() {
-  useEffect(() => { document.title = "Contact — Asymmetric"; }, []);
+  useEffect(() => { document.title = "Contact — Applied Computing"; }, []);
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function Contact() {
           </div>
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Location</p>
-            <p className="mt-3 text-[15px] text-foreground">{siteConfig.location}</p>
+            <p className="mt-3 text-[15px] leading-[1.6] text-foreground">{siteConfig.address}</p>
           </div>
           <div>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">Social</p>

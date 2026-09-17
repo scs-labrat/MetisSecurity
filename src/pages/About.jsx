@@ -4,7 +4,7 @@ import SectionWithLabel from "@/components/site/SectionWithLabel";
 import { about } from "@/data/team";
 
 export default function About() {
-  useEffect(() => { document.title = "About — Asymmetric"; }, []);
+  useEffect(() => { document.title = "About — Applied Computing"; }, []);
 
   return (
     <>
@@ -15,13 +15,22 @@ export default function About() {
             About
           </p>
           <h1 className="font-display text-[40px] font-bold uppercase leading-[0.95] tracking-tighter text-foreground sm:text-[56px] md:text-[72px]">
-            Who you'll work with
+            The Metis practice
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-[17px] leading-[1.7] text-muted-foreground md:text-[19px]">
             {about.intro}
           </p>
         </div>
       </section>
+
+      {/* What you buy */}
+      <SectionWithLabel label="What you buy">
+        <div className="border-t border-border py-8">
+          <p className="max-w-2xl text-[18px] leading-[1.6] text-foreground md:text-[22px]">
+            {about.whatClientBuys}
+          </p>
+        </div>
+      </SectionWithLabel>
 
       {/* Working principles */}
       <SectionWithLabel label="Principles">
@@ -87,7 +96,39 @@ export default function About() {
         </div>
       </SectionWithLabel>
 
-      <ContactCTA lines={["Meet", "Asymmetric."]} label="Discuss an engagement" />
+      {/* Company */}
+      <SectionWithLabel label="Company">
+        <div className="border-t border-border py-8">
+          <dl className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                Registered name
+              </dt>
+              <dd className="mt-2 text-[16px] text-foreground md:text-[18px]">
+                {about.company.registeredName}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                Company number
+              </dt>
+              <dd className="mt-2 text-[16px] text-foreground md:text-[18px]">
+                {about.company.companyNumber}
+              </dd>
+            </div>
+            <div>
+              <dt className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                Registered office
+              </dt>
+              <dd className="mt-2 text-[16px] leading-[1.6] text-foreground md:text-[18px]">
+                {about.company.address}
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </SectionWithLabel>
+
+      <ContactCTA lines={["Meet", "Applied Computing."]} label="Discuss an engagement" />
     </>
   );
 }

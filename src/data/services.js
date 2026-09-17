@@ -1,5 +1,5 @@
 // Three service-detail pages. Content is proposed/draft copy — replace with
-// Asymmetric's verified engagement terms, durations, and deliverables.
+// Applied Computing's verified engagement terms, durations, and deliverables.
 // Each page reuses one template: intro → facts → blocks → related → enquiry.
 
 import { capabilities, getCapabilityHref } from "./capabilities";

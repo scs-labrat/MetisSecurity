@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import SiteShell from '@/components/site/SiteShell';
 import Home from '@/pages/Home';
 import Services from '@/pages/Services';
+import Methodology from '@/pages/Methodology';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import ServiceDetail from '@/pages/ServiceDetail';
@@ -43,6 +44,7 @@ const AuthenticatedApp = () => {
       <Route element={<SiteShell />}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/methodology" element={<Methodology />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />

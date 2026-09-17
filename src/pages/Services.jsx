@@ -30,7 +30,7 @@ const faqs = [
 ];
 
 export default function Services() {
-  useEffect(() => { document.title = "Services — Asymmetric"; }, []);
+  useEffect(() => { document.title = "Services — Applied Computing"; }, []);
   const setCursor = useCursor();
 
   return (

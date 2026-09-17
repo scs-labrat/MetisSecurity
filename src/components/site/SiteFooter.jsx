@@ -55,6 +55,7 @@ export default function SiteFooter() {
           <ul className="mt-4 space-y-2">
             <li><Link to="/" className="text-[15px] text-foreground hover:opacity-60">Home</Link></li>
             <li><Link to="/services" className="text-[15px] text-foreground hover:opacity-60">Services</Link></li>
+            <li><Link to="/methodology" className="text-[15px] text-foreground hover:opacity-60">Methodology</Link></li>
             <li><Link to="/about" className="text-[15px] text-foreground hover:opacity-60">About</Link></li>
             <li><Link to="/contact" className="text-[15px] text-foreground hover:opacity-60">Contact</Link></li>
           </ul>
