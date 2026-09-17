@@ -27,7 +27,10 @@ export default function Home() {
           className="text-center font-display text-[44px] font-bold uppercase leading-[0.92] tracking-tighter text-foreground sm:text-[64px] md:text-[80px] lg:text-[96px]"
         />
         <p className="mt-7 max-w-xl text-center text-[14px] uppercase tracking-[0.14em] text-muted-foreground md:text-[18px]">
-          The Metis practice — one map of how access becomes consequence.
+          One Estate. One map.
+        </p>
+        <p className="mt-2 max-w-xl text-center text-[14px] uppercase tracking-[0.14em] text-muted-foreground md:text-[18px]">
+          Every finding is a proven path
         </p>
         <div className="absolute bottom-6 left-5 right-5 flex items-end justify-between md:bottom-10 md:left-10 md:right-10">
           <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground">
