@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import ContactCTA from "@/components/site/ContactCTA";
 import SectionWithLabel from "@/components/site/SectionWithLabel";
+import { useCursor } from "@/components/site/CustomCursor";
 import { about } from "@/data/team";
+import { platformComponents } from "@/data/platform";
 
 export default function About() {
   useEffect(() => { document.title = "About — Applied Computing"; }, []);
+  const setCursor = useCursor();
 
   return (
     <>
@@ -15,13 +19,40 @@ export default function About() {
             About
           </p>
           <h1 className="font-display text-[40px] font-bold uppercase leading-[0.95] tracking-tighter text-foreground sm:text-[56px] md:text-[72px]">
-            The Metis practice
+            The Metis Platform
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-[17px] leading-[1.7] text-muted-foreground md:text-[19px]">
             {about.intro}
           </p>
         </div>
       </section>
+
+      {/* Platform components */}
+      <SectionWithLabel label="The platform">
+        <div className="border-t border-border">
+          {platformComponents.map((c) => (
+            <Link
+              key={c.slug}
+              to={`/platform/${c.slug}`}
+              onMouseEnter={() => setCursor({ variant: "hover" })}
+              onMouseLeave={() => setCursor(null)}
+              className="group flex flex-col gap-1 border-b border-border py-7 md:flex-row md:items-baseline md:justify-between md:gap-8"
+            >
+              <div>
+                <h3 className="font-display text-[26px] font-bold uppercase tracking-tighter text-foreground md:text-[34px]">
+                  {c.name}
+                </h3>
+                <p className="mt-1 max-w-xl text-[15px] leading-[1.5] text-muted-foreground md:text-[17px]">
+                  {c.tagline}
+                </p>
+              </div>
+              <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground transition-colors group-hover:text-foreground">
+                View →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </SectionWithLabel>
 
       {/* What you buy */}
       <SectionWithLabel label="What you buy">

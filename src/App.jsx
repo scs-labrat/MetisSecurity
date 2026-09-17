@@ -13,6 +13,7 @@ import Services from '@/pages/Services';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import ServiceDetail from '@/pages/ServiceDetail';
+import PlatformDetail from '@/pages/PlatformDetail';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -46,6 +47,7 @@ const AuthenticatedApp = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route path="/platform/:slug" element={<PlatformDetail />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
