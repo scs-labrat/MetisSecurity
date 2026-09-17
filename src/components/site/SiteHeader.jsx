@@ -1,17 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LocalClock from "./LocalClock";
-import { siteConfig, primaryCta } from "@/lib/siteConfig";
 
-// Three-region header: local time (left), four-dot menu control (center),
-// outlined contact link (right). Sits in normal flow and scrolls away.
+// Two-region header: menu control (left), Melbourne & London clocks (right).
+// Sits in normal flow and scrolls away.
 export default function SiteHeader({ onOpenMenu }) {
   return (
     <header className="relative z-40 flex items-center justify-between px-5 py-6 md:px-10 md:py-8">
-      <div className="flex items-center">
-        <LocalClock />
-      </div>
-
       <button
         type="button"
         onClick={onOpenMenu}
@@ -29,12 +23,11 @@ export default function SiteHeader({ onOpenMenu }) {
         </span>
       </button>
 
-      <Link
-        to={primaryCta.href}
-        className="hidden items-center justify-center rounded-full border border-foreground/30 px-5 py-2.5 text-[13px] font-medium uppercase tracking-[0.08em] text-foreground transition-colors duration-300 hover:bg-foreground hover:text-background sm:inline-flex"
-      >
-        {primaryCta.label}
-      </Link>
+      <div className="flex items-center gap-4 md:gap-7">
+        <LocalClock timeZone="Australia/Melbourne" label="Melbourne" />
+        <span className="h-3 w-px bg-foreground/20" aria-hidden="true" />
+        <LocalClock timeZone="Europe/London" label="London" />
+      </div>
     </header>
   );
 }
