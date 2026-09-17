@@ -7,6 +7,7 @@ export const platformComponents = [
     name: "Metis Graph",
     role: "Authoritative core",
     tagline: "The single, versioned model of the estate every component shares.",
+    cover: "https://media.base44.com/images/public/6aaafc141cc6e903236d3845/b1b7c47ba_generated_image.png",
     summary:
       "The authoritative core of the platform: the single, versioned model of the estate that every other component reads from and writes back to.",
     paragraphs: [
@@ -19,6 +20,7 @@ export const platformComponents = [
     name: "Metis RED",
     role: "Offensive validation plane",
     tagline: "Proves or disproves the candidate edges Graph proposes, by execution.",
+    cover: "https://media.base44.com/images/public/6aaafc141cc6e903236d3845/4dafd035b_generated_image.png",
     summary:
       "The offensive validation plane: it takes the candidate edges Graph proposes and proves or disproves them by execution, turning hypotheses into proven paths to a named consequence.",
     paragraphs: [
@@ -31,6 +33,7 @@ export const platformComponents = [
     name: "Metis Deception",
     role: "Defensive feedback plane",
     tagline: "Seeds the estate with decoys and reports when something touches them.",
+    cover: "https://media.base44.com/images/public/6aaafc141cc6e903236d3845/e8e5a2dc3_generated_image.png",
     summary:
       "The defensive-feedback plane: it seeds the estate with synthetic credentials and decoy artefacts, then reports when something interacts with them — closing the loop a purely offensive tool leaves open.",
     paragraphs: [
@@ -43,6 +46,7 @@ export const platformComponents = [
     name: "Metis Blue",
     role: "Defensive and response plane",
     tagline: "Turns proven paths into remediation the responsible owners can act on.",
+    cover: "https://media.base44.com/images/public/6aaafc141cc6e903236d3845/417f00100_generated_image.png",
     summary:
       "The defensive and response counterpart to RED: concerned with what the estate records, alerts on, and contains, and with turning proven paths into remediation owners can act on.",
     paragraphs: [

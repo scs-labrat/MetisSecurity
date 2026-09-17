@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import ContactCTA from "@/components/site/ContactCTA";
 import SectionWithLabel from "@/components/site/SectionWithLabel";
-import { useCursor } from "@/components/site/CustomCursor";
+import PlatformPanel from "@/components/site/PlatformPanel";
 import { about } from "@/data/team";
 import { platformComponents } from "@/data/platform";
 
 export default function About() {
   useEffect(() => { document.title = "About — Applied Computing"; }, []);
-  const setCursor = useCursor();
 
   return (
     <>
@@ -27,32 +25,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Platform components */}
-      <SectionWithLabel label="The platform">
-        <div className="border-t border-border">
-          {platformComponents.map((c) => (
-            <Link
-              key={c.slug}
-              to={`/platform/${c.slug}`}
-              onMouseEnter={() => setCursor({ variant: "hover" })}
-              onMouseLeave={() => setCursor(null)}
-              className="group flex flex-col gap-1 border-b border-border py-7 md:flex-row md:items-baseline md:justify-between md:gap-8"
-            >
-              <div>
-                <h3 className="font-display text-[26px] font-bold uppercase tracking-tighter text-foreground md:text-[34px]">
-                  {c.name}
-                </h3>
-                <p className="mt-1 max-w-xl text-[15px] leading-[1.5] text-muted-foreground md:text-[17px]">
-                  {c.tagline}
-                </p>
-              </div>
-              <span className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted-foreground transition-colors group-hover:text-foreground">
-                View →
-              </span>
-            </Link>
-          ))}
-        </div>
-      </SectionWithLabel>
+      {/* Platform components — parallax panels */}
+      <div className="flex flex-col">
+        {platformComponents.map((c, i) => (
+          <PlatformPanel key={c.slug} component={c} index={i} />
+        ))}
+      </div>
 
       {/* What you buy */}
       <SectionWithLabel label="What you buy">
