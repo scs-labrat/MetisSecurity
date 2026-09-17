@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ContactCTA from "@/components/site/ContactCTA";
 import SectionWithLabel from "@/components/site/SectionWithLabel";
+import MethodologyIntro from "@/components/site/MethodologyIntro";
 import { methodology } from "@/data/methodology";
 
 export default function Methodology() {
@@ -10,6 +11,9 @@ export default function Methodology() {
 
   return (
     <>
+      {/* Long-form intro: the case against the silo model */}
+      <MethodologyIntro />
+
       {/* Hero */}
       <section className="px-5 pb-16 pt-32 md:px-10 md:pb-24 md:pt-40">
         <div className="mx-auto max-w-4xl">
