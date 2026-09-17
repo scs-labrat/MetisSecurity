@@ -14,7 +14,7 @@ export default function CapabilityPanel({ capability, index }) {
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["-7%", "7%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-18%", "18%"]);
   const href = getCapabilityHref(capability);
 
   return (
@@ -28,7 +28,7 @@ export default function CapabilityPanel({ capability, index }) {
       {/* Scroll-translation layer (taller than panel so edges never show) */}
       <motion.div
         style={{ y }}
-        className="absolute inset-x-0 -top-[10%] h-[120%]"
+        className="absolute inset-x-0 -top-[25%] h-[150%]"
       >
         {/* Hover-scale layer */}
         <div className="h-full w-full transition-transform duration-1000 ease-expo group-hover:scale-[1.04]">
