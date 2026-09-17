@@ -23,9 +23,8 @@ export default function SiteHeader({ onOpenMenu }) {
         </span>
       </button>
 
-      <div className="flex items-center gap-4 md:gap-7">
+      <div className="flex flex-col items-end gap-1">
         <LocalClock timeZone="Australia/Melbourne" label="Melbourne" />
-        <span className="h-3 w-px bg-foreground/20" aria-hidden="true" />
         <LocalClock timeZone="Europe/London" label="London" />
       </div>
     </header>
