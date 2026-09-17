@@ -33,13 +33,6 @@ const panels = [
     heading: "A new language each time.",
     body: "The client learns a different language every time. Each methodology asks them to reason about network access rules, or cloud permission policies, or delegated authorisation scopes, or prompt injection, as if these were unrelated problems. They are not. They are the same problem wearing different clothes.",
   },
-  {
-    cover:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=80",
-    index: "05",
-    heading: "The earlier practice already knew.",
-    body: "The earlier Metis practice already knew this. Its methodology opened by promising to assess \u201cwhether realistic access to your environment can lead to a business consequence, and which changes would prevent it,\u201d and elsewhere observed that \u201ca local weakness becomes more consequential when another system accepts its identity, data, or output without an effective boundary.\u201d Those two sentences are the entire paradigm. What was missing was a single model precise enough to make them literally true across every domain, and a shared language precise enough that a path in one technology and a path in another are written the same way. This set supplies both.",
-  },
 ];
 
 function ParallaxTextPanel({ panel }) {
